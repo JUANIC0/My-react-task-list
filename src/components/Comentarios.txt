@@ -1,0 +1,7 @@
+#¿Qué es mi producto y para que sirve?
+Mi producto es una aplicacion web que guarda tareas ingresando los datos proporcionados
+
+
+#¿Cuáles son las funcionalidades más importantes y porque los usuarios las usarían?
+Las principales funciones de mi task list es marcar las tareas pendientes y tambien te da la opcion de editarla o 
+simplemente eliminarla
