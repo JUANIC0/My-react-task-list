@@ -6,8 +6,8 @@
 
 :root {
   --rojo: #ba181b;
-  --azul: #7ad8eb;
-  --azul-hover: #88d9e9;
+  --azul: #165ee4;
+  --azul-hover: #2068d4;
   --rojo-hover: #e5383b;
   --verde: #09a129;
 }
@@ -28,6 +28,7 @@ body {
 }
 
 h1 {
+  
   text-align: center;
 }
 
@@ -81,7 +82,7 @@ ul li form {
   font-weight: 500;
   font-family: inherit;
   font-size: 18px;
-  color: #555;
+  color: #e0d7d7;
   width: 100%;
   outline: none;
 }
@@ -159,7 +160,7 @@ form {
   flex: 1;
   font-family: inherit;
   font-size: 17px;
-  color: #555;
+  color: #f7eded;
 }
 
 .btn-add {
