@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from "react";
+import { Input, Textarea, Button } from "@chakra-ui/react";
 
 export const TodoAdd = ({ handleNewTodo }) => {
   const [task, setTask] = useState({ name: '', description: '' });
@@ -29,26 +30,22 @@ export const TodoAdd = ({ handleNewTodo }) => {
 
   return (
     <form onSubmit={onFormSubmit}>
-      <input
+      <Input
         type="text"
-        className="input-add"
         name="name"
         value={task.name}
         onChange={handleInputChange}
         placeholder="Nombre de la tarea"
       />
-
-      <textarea
-        className="input-add"
+      <Textarea
         name="description"
         value={task.description}
         onChange={handleInputChange}
         placeholder="Descripción de la tarea"
       />
-
-      <button className="btn-add" type="submit">
+      <Button type="submit" className="btn-add">
         Agregar
-      </button>
+      </Button>
     </form>
   );
-};
+}

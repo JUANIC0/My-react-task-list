@@ -1,6 +1,6 @@
-import React from 'react';
-import { FaTrash } from 'react-icons/fa';
-import { TodoUpdate } from './TodoUpdate';
+import { Box, IconButton, ListItem } from "@chakra-ui/react";
+import { FaTrash } from "react-icons/fa";
+import { TodoUpdate } from "./TodoUpdate";
 
 export const TodoItem = ({
   todo,
@@ -9,23 +9,35 @@ export const TodoItem = ({
   handleCompleteTodo,
 }) => {
   return (
-    <li>
-      <div>
-        <TodoUpdate todo={todo} handleUpdateTodo={handleUpdateTodo} />
+    <ListItem display="flex" justifyContent="space-between" alignItems="center" gap="20px">
+      <TodoUpdate todo={todo} handleUpdateTodo={handleUpdateTodo} />
+      <Box overflow="hidden" cursor="pointer" display="flex" alignItems="center">
         <span>{todo.name}</span>
-      </div>
-      <span>{todo.description}</span> {/* Descripción de la tarea */}
+      </Box>
+      <span>{todo.description}</span>
       <span onClick={() => handleCompleteTodo(todo.id)}>
-        <label
+        <Box
           className={`container-done ${todo.done ? 'active' : ''}`}
-        ></label>
+          w="24px"
+          h="24px"
+          borderRadius="20px"
+          border="2px solid var(--verde)"
+          cursor="pointer"
+        />
       </span>
-      <button
+      <IconButton
         className='btn-delete'
         onClick={() => handleDeleteTodo(todo.id)}
-      >
-        <FaTrash />
-      </button>
-    </li>
+        icon={<FaTrash />}
+        borderRadius="50%"
+        bg="var(--rojo)"
+        color="#fff"
+        padding="15px"
+        transition="all 0.3s"
+        _hover={{ bg: "var(--rojo-hover)" }}
+        fontSize="inherit"
+        fontFamily="inherit"
+      />
+    </ListItem>
   );
-};
+}

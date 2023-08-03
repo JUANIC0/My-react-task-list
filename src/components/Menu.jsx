@@ -1,17 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Menu = () => {
   return (
     <nav>
       <ul>
         <li>
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="/tareas">Tareas</a>
+          <Link to="/tareas">Tareas</Link>
         </li>
         <li>
-          <a href="/sobre-nosotros">Sobre Nosotros</a>
+          <Link to="/sobre-nosotros">Sobre Nosotros</Link>
         </li>
       </ul>
     </nav>
@@ -19,4 +20,3 @@ const Menu = () => {
 };
 
 export default Menu;
-

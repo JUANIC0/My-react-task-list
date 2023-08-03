@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import './App.css';
+import { Box, Flex, Heading, List, ListItem } from '@chakra-ui/react';
+import { FaTrash } from 'react-icons/fa';
 import { TodoList } from './components/TodoList';
 import { TodoAdd } from './components/TodoAdd';
 import { useTodo } from './hooks/useTodo';
@@ -15,23 +16,29 @@ function App() {
   return (
     <Router>
       <Menu />
-      <div className="card-to-do">
-        <h1>Lista de Tareas</h1>
-        <div className="counter-todos">
-          <h3>Numero Tareas: {todosCount}</h3>
-          <h3>Pendientes: {pendingTodosCount}</h3>
-        </div>
-        <div className="add-todo">
-          <h3>Agregar Tarea</h3>
+      <Box p="4" boxShadow="md" borderRadius="lg" maxW="700px" mx="auto">
+        <Heading textAlign="center" size="2xl">Lista de Tareas</Heading>
+        <Flex justify="space-around" mt="4">
+          <Heading size="lg">Numero Tareas: {todosCount}</Heading>
+          <Heading size="lg">Pendientes: {pendingTodosCount}</Heading>
+        </Flex>
+        <Box mt="4">
           <TodoAdd handleNewTodo={handleNewTodo} />
-        </div>
-
+        </Box>
+        <List mt="4">
+          <TodoList
+            todos={todos}
+            handleUpdateTodo={handleUpdateTodo}
+            handleDeleteTodo={handleDeleteTodo}
+            handleCompleteTodo={handleCompleteTodo}
+          />
+        </List>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/tareas" element={<Tareas todos={todos} handleUpdateTodo={handleUpdateTodo} handleDeleteTodo={handleDeleteTodo} handleCompleteTodo={handleCompleteTodo} />} />
           <Route path="/sobre-nosotros" element={<SobreNosotros />} />
         </Routes>
-      </div>
+      </Box>
     </Router>
   );
 }
